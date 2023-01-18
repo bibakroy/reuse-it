@@ -11,9 +11,7 @@ function ViewImageScreen(props) {
       <Image
         style={styles.image}
         resizeMode="contain"
-        source={{
-          uri: "https://images.unsplash.com/photo-1594731804139-d70328c07f4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-        }}
+        source={require("../../assets/chair.jpg")}
       />
     </View>
   );
