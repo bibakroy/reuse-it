@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
+import colors from "../config/colors";
 
 function WelcomeScreen(props) {
   return (
@@ -12,15 +13,13 @@ function WelcomeScreen(props) {
       style={style.background}
     >
       <View style={style.logoContainer}>
-        {/* <Image source={require("../assets/logo.png")} style={style.logo} /> */}
-        <Image
+        <Image source={require("../assets/logo.png")} style={style.logo} />
+        {/* <Image
           source={{
             uri: "https://e7.pngegg.com/pngimages/390/565/png-clipart-recycle-logo-recycling-symbol-green-miscellaneous-symbols-thumbnail.png",
-            width: 50,
-            height: 50,
           }}
           style={style.logo}
-        />
+        /> */}
         <Text>Sell What You Don't Need!</Text>
       </View>
       <View style={style.loginButton}></View>
@@ -49,11 +48,11 @@ const style = StyleSheet.create({
   loginButton: {
     width: "100%",
     height: 70,
-    backgroundColor: "#fc5c65",
+    backgroundColor: colors.black,
   },
   registerButton: {
     width: "100%",
     height: 70,
-    backgroundColor: "#4ecdc4",
+    backgroundColor: colors.primary,
   },
 });
