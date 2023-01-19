@@ -1,4 +1,3 @@
-import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import Icon from "../components/Icon";
 

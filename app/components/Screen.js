@@ -1,4 +1,3 @@
-import React from "react";
 import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
 
 function Screen({ children, style }) {

@@ -1,18 +1,22 @@
-import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, TouchableHighlight, View } from "react-native";
 
 import CustomText from "./CustomText";
 import colors from "../config/colors";
 
 function Card({ title, subTitle, image }) {
   return (
-    <View style={styles.card}>
-      <Image source={image} style={styles.image} />
-      <View style={styles.detailsContainer}>
-        <CustomText style={styles.title}>{title}</CustomText>
-        <CustomText style={styles.subTitle}>{subTitle}</CustomText>
+    <TouchableHighlight
+      underlayColor={colors.gray_2}
+      onPress={() => console.log("")}
+    >
+      <View style={styles.card}>
+        <Image source={image} style={styles.image} />
+        <View style={styles.detailsContainer}>
+          <CustomText style={styles.title}>{title}</CustomText>
+          <CustomText style={styles.subTitle}>{subTitle}</CustomText>
+        </View>
       </View>
-    </View>
+    </TouchableHighlight>
   );
 }
 
