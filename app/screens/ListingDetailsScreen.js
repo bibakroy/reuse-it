@@ -17,6 +17,7 @@ function ListingDetailsScreen(props) {
             image={require("../assets/seller.jpg")}
             title="Kror Breed"
             subTitle="5 Listing"
+            onPress={() => console.log("")}
           />
         </View>
       </View>
