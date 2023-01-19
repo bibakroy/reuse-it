@@ -8,16 +8,26 @@ import {
 import colors from "../config/colors";
 import CustomText from "./CustomText";
 
-function ListItem({ image, title, subTitle, onPress, renderRightActions }) {
+function ListItem({
+  title,
+  subTitle,
+  image,
+  ImageComponent,
+  onPress,
+  renderRightActions,
+}) {
   return (
     <GestureHandlerRootView>
       <Swipeable renderRightActions={renderRightActions}>
         <TouchableHighlight underlayColor={colors.gray_2} onPress={onPress}>
           <View style={styles.container}>
-            <Image source={image} style={styles.image} />
-            <View>
+            {ImageComponent}
+            {image && <Image source={image} style={styles.image} />}
+            <View style={styles.detailsContainer}>
               <CustomText style={styles.title}>{title}</CustomText>
-              <CustomText style={styles.subTitle}>{subTitle}</CustomText>
+              {subTitle && (
+                <CustomText style={styles.subTitle}>{subTitle}</CustomText>
+              )}
             </View>
           </View>
         </TouchableHighlight>
@@ -32,6 +42,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     padding: 15,
+  },
+  detailsContainer: {
+    justifyContent: "center",
+    marginLeft: 10,
   },
   image: {
     width: 70,
