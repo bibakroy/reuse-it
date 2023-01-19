@@ -1,20 +1,28 @@
 import React from "react";
 import { Image, StyleSheet, TouchableHighlight, View } from "react-native";
-import colors from "../config/colors";
+import {
+  GestureHandlerRootView,
+  Swipeable,
+} from "react-native-gesture-handler";
 
+import colors from "../config/colors";
 import CustomText from "./CustomText";
 
-function ListItem({ image, title, subTitle, onPress }) {
+function ListItem({ image, title, subTitle, onPress, renderRightActions }) {
   return (
-    <TouchableHighlight underlayColor={colors.gray_2} onPress={onPress}>
-      <View style={styles.container}>
-        <Image source={image} style={styles.image} />
-        <View>
-          <CustomText style={styles.title}>{title}</CustomText>
-          <CustomText style={styles.subTitle}>{subTitle}</CustomText>
-        </View>
-      </View>
-    </TouchableHighlight>
+    <GestureHandlerRootView>
+      <Swipeable renderRightActions={renderRightActions}>
+        <TouchableHighlight underlayColor={colors.gray_2} onPress={onPress}>
+          <View style={styles.container}>
+            <Image source={image} style={styles.image} />
+            <View>
+              <CustomText style={styles.title}>{title}</CustomText>
+              <CustomText style={styles.subTitle}>{subTitle}</CustomText>
+            </View>
+          </View>
+        </TouchableHighlight>
+      </Swipeable>
+    </GestureHandlerRootView>
   );
 }
 

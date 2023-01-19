@@ -5,7 +5,7 @@ import CustomText from "../components/CustomText";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 
-function ListingDetailsScreen(props) {
+function ListingDetailsScreen() {
   return (
     <View>
       <Image source={require("../assets/jacket.jpg")} style={styles.image} />

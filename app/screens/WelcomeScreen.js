@@ -4,7 +4,7 @@ import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
 import CustomButton from "../components/CustomButton";
 import colors from "../config/colors";
 
-function WelcomeScreen(props) {
+function WelcomeScreen() {
   return (
     <ImageBackground
       source={require("../../assets/background.jpg")}
