@@ -2,6 +2,7 @@ import { useState } from "react";
 import CustomPicker from "./app/components/CustomPicker";
 import CustomTextInput from "./app/components/CustomTextInput";
 import Screen from "./app/components/Screen";
+import LoginScreen from "./app/screens/LoginScreen";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -14,14 +15,7 @@ export default function App() {
 
   return (
     <Screen>
-      <CustomPicker
-        icon="apps"
-        placeholder="Category"
-        items={categories}
-        selectedItem={category}
-        onSelectItem={(item) => setCategory(item)}
-      />
-      <CustomTextInput icon="email" placeholder="Category" />
+      <LoginScreen />
     </Screen>
   );
 }
