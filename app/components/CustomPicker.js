@@ -35,7 +35,9 @@ function CustomPicker({
               style={styles.icon}
             />
           )}
-          <CustomText style={styles.text}>
+          <CustomText
+            style={[styles.text, !selectedItem ? styles.placeholderText : null]}
+          >
             {selectedItem ? selectedItem.label : placeholder}
           </CustomText>
           <MaterialCommunityIcons
@@ -84,5 +86,8 @@ const styles = StyleSheet.create({
   },
   text: {
     flex: 1,
+  },
+  placeholderText: {
+    color: colors.gray_1,
   },
 });

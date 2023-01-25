@@ -15,7 +15,11 @@ function CustomTextInput({ icon, ...rest }) {
           style={styles.icon}
         />
       )}
-      <TextInput {...rest} style={[defaultStyle.text, styles.textInput]} />
+      <TextInput
+        {...rest}
+        placeholderTextColor={colors.gray_1}
+        style={[defaultStyle.text, styles.textInput]}
+      />
     </View>
   );
 }
