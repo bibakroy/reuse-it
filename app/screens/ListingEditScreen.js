@@ -6,6 +6,7 @@ import Screen from "../components/Screen";
 import CustomButton from "../components/CustomButton";
 import FormField from "../components/form/FormField";
 import CustomFormPicker from "../components/form/CustomFormPicker";
+import CategoryPickerItem from "../components/CategoryPickerItem";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -15,9 +16,45 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Camera", value: 3 },
+  {
+    label: "Furniture",
+    value: 1,
+    backgroundColor: "tomato",
+    icon: "floor-lamp",
+  },
+  { label: "Cars", value: 2, backgroundColor: "orange", icon: "car" },
+  { label: "Cameras", value: 3, backgroundColor: "green", icon: "camera" },
+  {
+    label: "Games",
+    value: 4,
+    backgroundColor: "blue",
+    icon: "gamepad-variant",
+  },
+  {
+    label: "Clothing",
+    value: 5,
+    backgroundColor: "skyblue",
+    icon: "tshirt-crew",
+  },
+  { label: "Sports", value: 6, backgroundColor: "navy", icon: "football" },
+  {
+    label: "Movie & Music",
+    value: 7,
+    backgroundColor: "purple",
+    icon: "music-circle",
+  },
+  {
+    label: "Books",
+    value: 8,
+    backgroundColor: "pink",
+    icon: "bookshelf",
+  },
+  {
+    label: "Others",
+    value: 9,
+    backgroundColor: "gray",
+    icon: "checkbox-blank-outline",
+  },
 ];
 
 function ListingEditScreen() {
@@ -42,11 +79,15 @@ function ListingEditScreen() {
               placeholder="Price"
               keyboardType="numeric"
               maxLength={8}
+              width={120}
             />
             <CustomFormPicker
               name="category"
               placeholder="Category"
               items={categories}
+              width="50%"
+              numberOfColumns={3}
+              PickerItemComponent={CategoryPickerItem}
             />
             <FormField
               name="description"

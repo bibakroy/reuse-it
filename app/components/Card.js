@@ -12,8 +12,12 @@ function Card({ title, subTitle, image }) {
       <View style={styles.card}>
         <Image source={image} style={styles.image} />
         <View style={styles.detailsContainer}>
-          <CustomText style={styles.title}>{title}</CustomText>
-          <CustomText style={styles.subTitle}>{subTitle}</CustomText>
+          <CustomText style={styles.title} numberOfLines={1}>
+            {title}
+          </CustomText>
+          <CustomText style={styles.subTitle} numberOfLines={2}>
+            {subTitle}
+          </CustomText>
         </View>
       </View>
     </TouchableHighlight>

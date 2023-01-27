@@ -20,13 +20,16 @@ function CustomPicker({
   items,
   selectedItem,
   onSelectItem,
+  width = "100%",
+  numberOfColumns = 1,
+  PickerItemComponent = PickerItem,
 }) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
@@ -54,7 +57,8 @@ function CustomPicker({
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <PickerItem
+              <PickerItemComponent
+                item={item}
                 label={item.label}
                 onPress={() => {
                   onSelectItem(item);
@@ -62,6 +66,7 @@ function CustomPicker({
                 }}
               />
             )}
+            numColumns={numberOfColumns}
           />
         </Screen>
       </Modal>
