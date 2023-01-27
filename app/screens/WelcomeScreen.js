@@ -6,15 +6,12 @@ import colors from "../config/colors";
 function WelcomeScreen() {
   return (
     <ImageBackground
-      source={require("../../assets/background.jpg")}
+      source={require("../assets/background.jpg")}
       style={styles.background}
       blurRadius={5}
     >
       <View style={styles.logoContainer}>
-        <Image
-          source={require("../../assets/logo-red.png")}
-          style={styles.logo}
-        />
+        <Image source={require("../assets/logo-red.png")} style={styles.logo} />
         <Text style={styles.tagline}>Sell What You Don't Need!</Text>
       </View>
       <View style={styles.buttonsContainer}>
