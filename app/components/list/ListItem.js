@@ -5,8 +5,8 @@ import {
 } from "react-native-gesture-handler";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import colors from "../config/colors";
-import CustomText from "./CustomText";
+import colors from "../../config/colors";
+import CustomText from "../CustomText";
 
 function ListItem({
   title,
