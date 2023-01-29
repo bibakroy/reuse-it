@@ -10,7 +10,7 @@ export default function App() {
   const selectImage = async () => {
     try {
       const result = await ImagePicker.launchImageLibraryAsync();
-      console.log(result);
+
       if (!result.canceled) {
         setImageUri(result.assets[0].uri);
       }
