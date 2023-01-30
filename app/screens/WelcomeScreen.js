@@ -3,7 +3,7 @@ import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
 import CustomButton from "../components/CustomButton";
 import colors from "../config/colors";
 
-function WelcomeScreen() {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       source={require("../assets/background.jpg")}
@@ -15,10 +15,13 @@ function WelcomeScreen() {
         <Text style={styles.tagline}>Sell What You Don't Need!</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <CustomButton title="Login" onPress={() => console.log("Login")} />
+        <CustomButton
+          title="Login"
+          onPress={() => navigation.navigate("Login")}
+        />
         <CustomButton
           title="Register"
-          onPress={() => console.log("Register")}
+          onPress={() => navigation.navigate("Register")}
           bgColor={colors.secondary}
         />
       </View>
