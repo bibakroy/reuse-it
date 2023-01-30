@@ -17,6 +17,12 @@ const listings = [
     price: 1000,
     image: require("../assets/couch.jpg"),
   },
+  {
+    id: 3,
+    title: "Couch in great condition",
+    price: 1000,
+    image: require("../assets/couch.jpg"),
+  },
 ];
 
 function ListingScreen(props) {
@@ -42,7 +48,6 @@ export default ListingScreen;
 const styles = StyleSheet.create({
   screen: {
     padding: 20,
-    marginTop: 20,
     backgroundColor: colors.gray_2,
   },
 });

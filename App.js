@@ -1,28 +1,12 @@
-import { useState } from "react";
-
 import Screen from "./app/components/Screen";
-import ImageInputList from "./app/components/ImageInputList";
+import AccountScreen from "./app/screens/AccountScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
+import ListingScreen from "./app/screens/ListingScreen";
 
 export default function App() {
-  const [imageUris, setImageUris] = useState([]);
-
-  const handleAddImage = (uri) => {
-    setImageUris((prevImageUris) => [...prevImageUris, uri]);
-  };
-
-  const handleRemoveImage = (uri) => {
-    setImageUris((prevImageUris) =>
-      prevImageUris.filter((imageUri) => imageUri !== uri)
-    );
-  };
-
   return (
     <Screen>
-      <ImageInputList
-        imageUris={imageUris}
-        onAddImage={handleAddImage}
-        onRemoveImage={handleRemoveImage}
-      />
+      <ListingEditScreen />
     </Screen>
   );
 }

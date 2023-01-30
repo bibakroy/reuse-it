@@ -7,12 +7,14 @@ import CustomButton from "../components/CustomButton";
 import FormField from "../components/form/FormField";
 import FormPicker from "../components/form/FormPicker";
 import CategoryPickerItem from "../components/CategoryPickerItem";
+import FormImagePicker from "../components/form/FormImagePicker";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
   price: Yup.number().required().min(1).max(10000).label("Price"),
   description: Yup.string().label("Description"),
   category: Yup.object().required().nullable().label("Category"),
+  images: Yup.array().min(1, "Please select at least one image"),
 });
 
 const categories = [
@@ -60,19 +62,20 @@ const categories = [
 function ListingEditScreen() {
   return (
     <Screen style={styles.screen}>
-      <Image source={require("../assets/logo-red.png")} style={styles.logo} />
       <Formik
         initialValues={{
           title: "",
           price: "",
           description: "",
           category: null,
+          images: [],
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
         {({ handleSubmit }) => (
           <>
+            <FormImagePicker name="images" />
             <FormField name="title" placeholder="Title" maxLength={255} />
             <FormField
               name="price"
@@ -109,12 +112,5 @@ export default ListingEditScreen;
 const styles = StyleSheet.create({
   screen: {
     padding: 10,
-  },
-  logo: {
-    width: 80,
-    height: 80,
-    alignSelf: "center",
-    marginTop: 50,
-    marginBottom: 20,
   },
 });
