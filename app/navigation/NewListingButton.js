@@ -22,10 +22,10 @@ export default NewListingButton;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.primary,
-    height: 80,
-    width: 80,
+    height: 70,
+    width: 70,
     borderRadius: 40,
-    bottom: 20,
+    bottom: 15,
     borderColor: colors.white,
     borderWidth: 10,
     alignItems: "center",

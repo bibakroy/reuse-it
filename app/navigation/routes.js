@@ -1,9 +1,13 @@
 export default Object.freeze({
+  WELCOME: "Welcome",
+  LOGIN: "Login",
+  REGISTER: "Register",
+  FEED: "Feed",
+  LISTING: "Listing",
   LISTING_DETAILS: "Listing Details",
   LISTING_EDIT: "Listing Edit",
-  LISTING: "Listing",
-  LOGIN: "Login",
+  ACCOUNT: "Account",
+  ACCOUNT_DETAILS: "Account Details",
   MESSAGES: "Messages",
-  REGISTER: "Register",
-  WELCOME: "Welcome",
+  HOME: "Home",
 });

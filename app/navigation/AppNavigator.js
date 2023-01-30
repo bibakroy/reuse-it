@@ -13,7 +13,7 @@ function AppNavigator() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
-        name="Feed"
+        name={routes.FEED}
         component={FeedNavigator}
         options={{
           tabBarIcon: ({ size, color }) => (
@@ -22,7 +22,7 @@ function AppNavigator() {
         }}
       />
       <Tab.Screen
-        name="Listing Edit"
+        name={routes.LISTING_EDIT}
         component={ListingEditScreen}
         options={({ navigation }) => ({
           tabBarButton: () => (
@@ -33,7 +33,7 @@ function AppNavigator() {
         })}
       />
       <Tab.Screen
-        name="Account Details"
+        name={routes.ACCOUNT_DETAILS}
         component={AccountNavigator}
         options={{
           tabBarIcon: ({ size, color }) => (
