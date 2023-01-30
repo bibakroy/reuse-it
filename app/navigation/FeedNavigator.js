@@ -13,7 +13,7 @@ function FeedNavigator() {
         component={ListingScreen}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} />
+      <Stack.Screen name="Listing Details" component={ListingDetailsScreen} />
     </Stack.Navigator>
   );
 }

@@ -20,10 +20,11 @@ const menuItems = [
       name: "email",
       backgroundColor: colors.secondary,
     },
+    targerScreen: "Messages",
   },
 ];
 
-function AccountScreen() {
+function AccountScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <View>
@@ -46,6 +47,7 @@ function AccountScreen() {
                   bgColor={item.icon.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate(item.targerScreen)}
             />
           )}
           ItemSeparatorComponent={() => <ListItemSeparator />}
