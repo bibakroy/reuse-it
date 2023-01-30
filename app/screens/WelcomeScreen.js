@@ -2,6 +2,7 @@ import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
 
 import CustomButton from "../components/CustomButton";
 import colors from "../config/colors";
+import routes from "../navigation/routes";
 
 function WelcomeScreen({ navigation }) {
   return (
@@ -17,11 +18,11 @@ function WelcomeScreen({ navigation }) {
       <View style={styles.buttonsContainer}>
         <CustomButton
           title="Login"
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate(routes.LOGIN)}
         />
         <CustomButton
           title="Register"
-          onPress={() => navigation.navigate("Register")}
+          onPress={() => navigation.navigate(routes.REGISTER)}
           bgColor={colors.secondary}
         />
       </View>

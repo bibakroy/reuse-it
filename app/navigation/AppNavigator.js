@@ -5,6 +5,7 @@ import ListingEditScreen from "../screens/ListingEditScreen";
 import AccountNavigator from "./AccountNavigator";
 import FeedNavigator from "./FeedNavigator";
 import NewListingButton from "./NewListingButton";
+import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,14 +27,7 @@ function AppNavigator() {
         options={({ navigation }) => ({
           tabBarButton: () => (
             <NewListingButton
-              onPress={() => navigation.navigate("Listing Edit")}
-            />
-          ),
-          tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons
-              name="plus-circle"
-              size={size}
-              color={color}
+              onPress={() => navigation.navigate(routes.LISTING_EDIT)}
             />
           ),
         })}
