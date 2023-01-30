@@ -1,14 +1,16 @@
-import { Image, StyleSheet, TouchableHighlight, View } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 
 import CustomText from "./CustomText";
 import colors from "../config/colors";
 
-function Card({ title, subTitle, image }) {
+function Card({ title, subTitle, image, onPress }) {
   return (
-    <TouchableHighlight
-      underlayColor={colors.gray_2}
-      onPress={() => console.log("")}
-    >
+    <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
         <Image source={image} style={styles.image} />
         <View style={styles.detailsContainer}>
@@ -20,7 +22,7 @@ function Card({ title, subTitle, image }) {
           </CustomText>
         </View>
       </View>
-    </TouchableHighlight>
+    </TouchableWithoutFeedback>
   );
 }
 

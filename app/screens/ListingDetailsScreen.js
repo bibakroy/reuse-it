@@ -4,13 +4,15 @@ import CustomText from "../components/CustomText";
 import ListItem from "../components/list/ListItem";
 import colors from "../config/colors";
 
-function ListingDetailsScreen() {
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
+
   return (
     <View>
-      <Image source={require("../assets/jacket.jpg")} style={styles.image} />
+      <Image source={listing.image} style={styles.image} />
       <View style={styles.detailsContainer}>
-        <CustomText style={styles.title}>Red jacket for sale</CustomText>
-        <CustomText style={styles.price}>$100</CustomText>
+        <CustomText style={styles.title}>{listing.title}</CustomText>
+        <CustomText style={styles.price}>${listing.price}</CustomText>
         <View style={styles.userContainer}>
           <ListItem
             image={require("../assets/seller.jpg")}

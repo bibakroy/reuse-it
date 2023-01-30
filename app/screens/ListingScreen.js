@@ -20,12 +20,12 @@ const listings = [
   {
     id: 3,
     title: "Couch in great condition",
-    price: 1000,
+    price: 1200,
     image: require("../assets/couch.jpg"),
   },
 ];
 
-function ListingScreen(props) {
+function ListingScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <FlatList
@@ -36,6 +36,7 @@ function ListingScreen(props) {
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
+            onPress={() => navigation.navigate("ListingDetails", item)}
           />
         )}
       />
