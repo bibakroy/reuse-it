@@ -3,7 +3,7 @@ import { useFormikContext } from "formik";
 import CustomPicker from "../CustomPicker";
 import ErrorMessage from "./ErrorMessage";
 
-function CustomFormPicker({
+function FormPicker({
   items,
   name,
   placeholder,
@@ -29,4 +29,4 @@ function CustomFormPicker({
   );
 }
 
-export default CustomFormPicker;
+export default FormPicker;

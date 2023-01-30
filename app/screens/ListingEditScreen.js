@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import Screen from "../components/Screen";
 import CustomButton from "../components/CustomButton";
 import FormField from "../components/form/FormField";
-import CustomFormPicker from "../components/form/CustomFormPicker";
+import FormPicker from "../components/form/FormPicker";
 import CategoryPickerItem from "../components/CategoryPickerItem";
 
 const validationSchema = Yup.object().shape({
@@ -81,7 +81,7 @@ function ListingEditScreen() {
               maxLength={8}
               width={120}
             />
-            <CustomFormPicker
+            <FormPicker
               name="category"
               placeholder="Category"
               items={categories}
