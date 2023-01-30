@@ -13,7 +13,7 @@ import { useEffect } from "react";
 
 function ImageInput({ imageUri, onChangeImage }) {
   const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraRollPermissionsAsync();
+    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
 
     if (!granted) {
       alert("You need to enable permission to access the library.");

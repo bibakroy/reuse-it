@@ -8,6 +8,7 @@ import FormField from "../components/form/FormField";
 import FormPicker from "../components/form/FormPicker";
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import FormImagePicker from "../components/form/FormImagePicker";
+import useLocation from "../hooks/useLocation";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -60,6 +61,8 @@ const categories = [
 ];
 
 function ListingEditScreen() {
+  const location = useLocation();
+
   return (
     <Screen style={styles.screen}>
       <Formik
@@ -70,7 +73,7 @@ function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => console.log(values, location)}
         validationSchema={validationSchema}
       >
         {({ handleSubmit }) => (
