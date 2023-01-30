@@ -7,6 +7,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Screen from "./app/components/Screen";
 import AuthNavigator from "./app/navigation/AuthNavition";
 import NavigationTheme from "./app/navigation/NavigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
