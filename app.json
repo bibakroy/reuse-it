@@ -24,8 +24,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF",
-        "blockedPermissions": ["android.permission.RECORD_AUDIO"]
+        "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
