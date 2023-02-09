@@ -1,29 +1,38 @@
-import React from "react";
 import { Image, ImageBackground, StyleSheet, View, Text } from "react-native";
-import colors from "../config/colors";
 
-function WelcomeScreen(props) {
+import CustomButton from "../components/CustomButton";
+import colors from "../config/colors";
+import routes from "../navigation/routes";
+
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
-      source={require("../../assets/background.jpg")}
-      style={style.background}
+      source={require("../assets/background.jpg")}
+      style={styles.background}
+      blurRadius={5}
     >
-      <View style={style.logoContainer}>
-        <Image
-          source={require("../../assets/logo-red.png")}
-          style={style.logo}
-        />
-        <Text>Sell What You Don't Need!</Text>
+      <View style={styles.logoContainer}>
+        <Image source={require("../assets/logo-red.png")} style={styles.logo} />
+        <Text style={styles.tagline}>Sell What You Don't Need!</Text>
       </View>
-      <View style={style.loginButton}></View>
-      <View style={style.registerButton}></View>
+      <View style={styles.buttonsContainer}>
+        <CustomButton
+          title="Login"
+          onPress={() => navigation.navigate(routes.LOGIN)}
+        />
+        <CustomButton
+          title="Register"
+          onPress={() => navigation.navigate(routes.REGISTER)}
+          bgColor={colors.secondary}
+        />
+      </View>
     </ImageBackground>
   );
 }
 
 export default WelcomeScreen;
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   background: {
     flex: 1,
     justifyContent: "flex-end",
@@ -38,14 +47,13 @@ const style = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  loginButton: {
+  buttonsContainer: {
+    padding: 20,
     width: "100%",
-    height: 70,
-    backgroundColor: colors.primary,
   },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: colors.secondary,
+  tagline: {
+    fontSize: 25,
+    fontWeight: "600",
+    paddingTop: 20,
   },
 });
